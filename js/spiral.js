@@ -72,4 +72,5 @@ $(function() {
   }
 
   doSpiral('#spiral');
+  $('#getit').attr('href', $('#spiral').get(0).toDataURL());
 });
