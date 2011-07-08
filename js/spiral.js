@@ -10,6 +10,12 @@ $(function() {
       points.unshift([cx + dx * r * width, cy + dy * r * width]);
       points.push([cx + dx * r / width, cy + dy * r / width]);
       r += rate;
+
+      // Constant 5 affects line flatness and also rate of growth of
+      // spiral. We reduce the subtended angle of each segment as the
+      // radius increases to maintain flatness. This affects the angular
+      // increment which in turn affects how often the radius grows in the
+      // course of a full revolution.
       angle += wind * 5 / r;
       if (angle > a360) {
         angle -= a360;
